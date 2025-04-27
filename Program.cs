@@ -1,4 +1,6 @@
 ﻿
+using Balfer_app;
+
 int opcao = 0;
 List<KeyValuePair<int, int>> servicos = new List<KeyValuePair<int, int>>();
 servicos.Add(new KeyValuePair<int, int>(1555, 10));
@@ -26,11 +28,17 @@ void Menu()
     {
         case 1:
             {
-                AdicionarNovoServico();
+                MenuAdicionarServico menu1 = new MenuAdicionarServico();
+                menu1.Executar(servicos);
+                Menu();
+                
             }break;
         case 2:
             {
-                ConsultarServicos();
+                MenuConsultarServicos menu2 = new MenuConsultarServicos();
+                menu2.Executar(servicos);
+                Menu();
+                
             }break;
         default:
             {
@@ -41,35 +49,5 @@ void Menu()
 
 Menu();
 
-void AdicionarNovoServico()
-{
-    Console.WriteLine("\n---Adicionar novo serviço---\n");
-    Console.WriteLine("Insira a ordem de serviço:");
-    int ordem = int.Parse(Console.ReadLine());
 
-    Console.WriteLine("Digite a quantidade de serviços:");
-    int quantidadeServicos = int.Parse(Console.ReadLine());
 
-    servicos.Add(new KeyValuePair<int, int>(ordem, quantidadeServicos));
-
-    Console.WriteLine("Serviço Registrado com sucesso...");
-    Console.WriteLine("Digite uma tecla para voltar ao Menu");
-    Console.ReadKey();
-    Console.Clear();
-    Menu();
-}
-
-void ConsultarServicos()
-{
-    foreach(KeyValuePair<int,int> linha in servicos)
-    {
-        Console.WriteLine("\n---Serviço---");
-        Console.WriteLine($"Ordem de Serviço:{linha.Key}");
-        Console.WriteLine($"Troca de {linha.Value} cubo de freio\n");
-    }
-    
-    Console.WriteLine("Digite uma tecla para voltar ao Menu");
-    Console.ReadKey();
-    Console.Clear();
-    Menu();
-}
