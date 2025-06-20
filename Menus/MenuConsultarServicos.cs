@@ -1,8 +1,6 @@
-﻿
+﻿using MySql.Data.MySqlClient;
 
-using MySql.Data.MySqlClient;
-
-namespace Balfer_app;
+namespace Balfer_app.Menus;
 
 internal class MenuConsultarServicos
 {
