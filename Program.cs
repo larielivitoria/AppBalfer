@@ -1,12 +1,6 @@
 ﻿
 using Balfer_app;
 
-int opcao = 0;
-List<KeyValuePair<int, int>> servicos = new List<KeyValuePair<int, int>>();
-servicos.Add(new KeyValuePair<int, int>(1555, 10));
-
-
-
 
 void Logo()
 {
@@ -26,7 +20,7 @@ void Menu()
     Console.WriteLine("[2] consultar serviços");
     
     Console.Write("Digite uma opção:");
-    opcao = int.Parse(Console.ReadLine());
+    int opcao = int.Parse(Console.ReadLine());
 
     switch (opcao)
     {
